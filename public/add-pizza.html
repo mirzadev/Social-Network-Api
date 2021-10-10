@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>User Account</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap&family=Karla:400,700|Rubik:400,400i,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header class="py-3 mb-3">
+    <div class="flex-row justify-space-between align-center container-fluid mx-auto">
+      <a href="/">
+        <h1 class="text-light bg-dark py-3 px-4 logo round-25-80">Friend's Mart</h1>
+      </a>
+
+      <h3 class="text-light bg-dark p-3 round-25-80">
+        Create Your Own User Account
+      </h3>
+    </div>
+  </header>
+
+  <main class="container-fluid flex-row mx-auto justify-space-between">
+    <div class="col-12 py-3 px-4 my-4 bg-dark round-25-80">
+      <h2 class="text-light">Create your own account to share your thoughts and reactions with your friends</h2>
+    </div>
+
+    <section class="bg-dark p-3 col-12 col-lg-8 mb-3 round-25-80">
+      <h2 class="text-light ">Let's start creating your account</h2>
+      <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
+        <div class="form-container">
+          <form id="user-form">
+            <div class="mb-2">
+              <label for="user-name" class="form-label">User Name:</label>
+              <input type="text" id="user-name" name="user-name" class="form-input" placeholder="Enter User Name"
+                required />
+            </div>
+            <div class="mb-2">
+              <label for="created-by" class="form-label">Your Full Name:</label>
+              <input type="text" id="created-by" name="created-by" class="form-input" placeholder="Your Full Name"
+                required />
+            </div>
+            <div class="mb-2">
+              <label for="address-text" class="form-label">Your Address:</label>
+              <input type="text" id="address-space" name="address-space" class="form-input" placeholder="Your Address"
+                required />
+            </div>
+            <div class="mb-2">
+              <label for="email-id" class="form-label">Enter Your Email:</label>
+              <input type="text" id="email-id" name="email-id" class="form-input" placeholder="Your full email Address"
+                required />
+            </div>
+            <div class="mb-2">
+              <label for="telephone-contact" class="form-label">Telephone Number:</label>
+              <input type="text" id="telephone-contact" name="telephone-contact" class="form-input"
+                placeholder="Enter Your phone number" required />
+            </div>
+
+            <div class="my-4 border-light-top display-block w-100"></div>
+
+            <button type="submit" class="btn w-100 m-auto">Submit</button>
+          </form>
+        </div>
+    </section>
+
+    <section class="bg-dark p-3 col-12 col-lg-4 mb-3 round-25-80 min-60-vh">
+      <h2 class="text-light px-2">Looking for a friend?</h2>
+      <nav>
+        <a class="btn display-block round-25-80" href="/">See All Users.</a>
+      </nav>
+    </section>
+
+    </div>
+  </main>
+  <script src="./assets/js/add-pizza.js"></script>
+</body>
+
+</html>
