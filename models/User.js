@@ -5,6 +5,7 @@ const dateFormat = require('../utils/dateFormat');
 const UserSchema = new Schema(
       {
             username: {
+
                   type: String,
                   unique: true,
                   required: true,
@@ -19,7 +20,25 @@ const UserSchema = new Schema(
                   type: String,
                   unique: true,
                   required: true,
-                  match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+                  match: [/.+@.+\..+/, 'Please fill a valid email address']
+            },
+            fullname: {
+                  type: String,
+                  require: true,
+                  unique: false,
+                  trim: true
+            },
+            address: {
+                  type: String,
+                  require: true,
+                  unique: false,
+                  trim: true
+            },
+            telephone: {
+                  type: String,
+                  require: true,
+                  unique: false,
+                  trim: true
             },
             thoughts: [
                   {

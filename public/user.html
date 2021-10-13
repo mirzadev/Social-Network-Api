@@ -18,49 +18,56 @@
       <a href="/">
         <h1 class="text-light bg-dark py-3 px-4 logo round-25-80">Friend's Mart</h1>
       </a>
-      <h3 class="text-light bg-dark p-3 round-25-80" id="back-btn">
-        &larr; Go Back
-      </h3>
+
+      <a class="text-light bg-dark p-3 round-25-80" id="back-btn" href="/">
+        <h3>&larr; Go Back</h3>
+      </a>
     </div>
   </header>
 
   <main class="container-fluid flex-row mx-auto justify-space-between align-start">
     <section class="col-12 col-lg-4 bg-tertiary p-3 rounded">
-      <h2 class="text-dark" id="user-name"></h2>
-      <h4 class="text-dark">By: <span id="created-by"></span></h4>
+
+      <h4 class="text-dark">Username: <span id="user-name"></span></h4>
+      <div class="w-100 border-dark-top my-3"></div>
+      <h4 class="text-dark">Full Name: <span id="full-name"></span></h4>
       <div class="w-100 border-dark-top my-3"></div>
       <h4 class="text-dark">Created At: <span id="created-at"></span></h4>
       <div class="w-100 border-dark-top my-3"></div>
-      <h4 class="text-dark">Suggested Size: <span id="size"></span></h4>
+      <h4 class="text-dark">Email: <span id="email-id"></span></h4>
       <div class="w-100 border-dark-top my-3"></div>
-      <h4 class="text-dark">Toppings</h4>
-      <div class="flex-row justify-space-between" id="toppings-list"></div>
+      <h4 class="text-dark">Address: <span id="address"></span></h4>
+      <div class="w-100 border-dark-top my-3"></div>
+      <h4 class="text-dark">Telephone: <span id="tel-contact"></span></h4>
+      <div class="w-100 border-dark-top my-3"></div>
+
+
     </section>
 
     <section class="col-12 col-lg-8 ">
       <h2 class="bg-dark p-3 m-0 rounded">Thoughts</h2>
-      <!-- print comments here -->
-      <div id="comment-section" class="mb-3"></div>
+      <!-- print thoughts here -->
+      <div id="thought-section" class="mb-3"></div>
 
-      <!-- new comment form -->
-      <form id="new-comment-form" class="bg-dark p-3 mb-3 rounded">
+      <!-- new thoughts form -->
+      <form id="new-thought-form" class="bg-dark p-3 mb-3 rounded">
         <div class="mb-2">
           <label for="written-by">Your Name</label>
           <input class="form-input" id="written-by" name="written-by" placeholder="Name" required />
         </div>
         <div class="mb-2">
-          <label for="comment">Leave Your Reactions</label>
-          <textarea class="form-textarea form-input" id="comment" name="comment" required></textarea>
+          <label for="thoughts">Leave Your Reactions</label>
+          <textarea class="form-textarea form-input" id="thought-reaction" name="thought" required></textarea>
         </div>
 
-        <button class="mt-3 btn display-block w-100">Add Thought</button>
+        <button class="mt-3 btn display-block w-100" id="add-thought">Add Thought</button>
       </form>
 
 
 
     </section>
   </main>
-  <script src="./assets/js/single-pizza.js"></script>
+  <script src="./assets/js/user.js"></script>
 </body>
 
 </html>

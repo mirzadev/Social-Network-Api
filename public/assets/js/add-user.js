@@ -1,58 +1,23 @@
-const $addToppingBtn = document.querySelector('#add-topping');
-const $pizzaForm = document.querySelector('#pizza-form');
-const $customToppingsList = document.querySelector('#custom-toppings-list');
+const $userForm = document.querySelector('#user-form');
+const submit = document.querySelector('#user-submit')
 
-const handleAddTopping = event => {
+
+const handleUserSubmit = event => {
   event.preventDefault();
 
-  const toppingValue = document.querySelector('#new-topping').value;
+  const username = $userForm.querySelector('#user-name').value;
+  const fullname = $userForm.querySelector('#full-name').value;
+  const address = $userForm.querySelector('#address-space').value;
+  const email = $userForm.querySelector('#email-id').value;
+  const telephone = $userForm.querySelector('#tel-contact').value;
 
-  if (!toppingValue) {
-    return false;
-  }
-
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.name = 'topping';
-  checkbox.value = toppingValue;
-  checkbox.id = toppingValue
-    .toLowerCase()
-    .split(' ')
-    .join('-');
-
-  const label = document.createElement('label');
-  label.textContent = toppingValue;
-  label.htmlFor = toppingValue
-    .toLowerCase()
-    .split(' ')
-    .join('-');
-
-  const divWrapper = document.createElement('div');
-
-  divWrapper.appendChild(checkbox);
-  divWrapper.appendChild(label);
-  $customToppingsList.appendChild(divWrapper);
-
-  toppingValue.value = '';
-};
-
-const handlePizzaSubmit = event => {
-  event.preventDefault();
-
-  const pizzaName = $pizzaForm.querySelector('#pizza-name').value;
-  const createdBy = $pizzaForm.querySelector('#created-by').value;
-  const size = $pizzaForm.querySelector('#pizza-size').value;
-  const toppings = [...$pizzaForm.querySelectorAll('[name=topping]:checked')].map(topping => {
-    return topping.value;
-  });
-
-  if (!pizzaName || !createdBy || !toppings.length) {
+  if (!username || !fullname || !address || !email || !telephone) {
     return;
   }
 
-  const formData = { pizzaName, createdBy, size, toppings };
+  const formData = { username, fullname, address, email, telephone };
 
-  fetch('/api/pizzas', {
+  fetch('/api/users', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -62,7 +27,7 @@ const handlePizzaSubmit = event => {
   })
     .then(response => response.json())
     .then(postResponse => {
-      alert('Pizza created successfully!');
+      alert('User account created successfully!');
       console.log(postResponse);
     })
     .catch(err => {
@@ -70,5 +35,5 @@ const handlePizzaSubmit = event => {
     });
 };
 
-$pizzaForm.addEventListener('submit', handlePizzaSubmit);
-$addToppingBtn.addEventListener('click', handleAddTopping);
+$userForm.addEventListener('submit', handleUserSubmit);
+
