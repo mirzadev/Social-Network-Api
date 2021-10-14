@@ -45,7 +45,7 @@ const thoughtController = {
                               res.status(404).json({ message: 'No user found with this id!' });
                               return;
                         }
-                        res.json(dbUserData);
+                        res.json({ message: 'Your thought has been added successfully' });
                   })
                   .catch(err => res.json(err));
       },

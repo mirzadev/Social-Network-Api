@@ -68,7 +68,7 @@ function printthought(thought) {
       <p>${thought.thoughtText}</p>
       <div class="bg-dark ml-3 p-2 rounded" >
         ${thought.reactions && thought.reactions.length
-      ? `<h5>${thought.reactions.length} ${thought.reactions.length === 1 ? 'Reaction' : 'Reactions'
+      ? `<h5>${thought.reactions.length} ${thought.reactions.length === 1 ? 'Reaction' : 'reactions'
       }</h5>
         ${thought.reactions.map(printReaction).join('')}`
       : '<h5 class="p-1">No replies yet!</h5>'
