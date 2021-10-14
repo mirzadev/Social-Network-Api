@@ -59,13 +59,13 @@ function printUser(userData) {
 }
 
 function printthought(thought) {
-  // make div to hold comment and subcomments
+  // make div to hold thoughts and reactions
   const thoughtDiv = document.createElement('div');
   thoughtDiv.classList.add('my-2', 'card', 'p-2', 'w-100', 'text-dark', 'rounded');
 
   const thoughtContent = `
-      <h5 class="text-dark">${thought.writtenBy} commented on ${thought.createdAt}:</h5>
-      <p>${thought.thoughtBody}</p>
+      <h5 class="text-dark">${thought.username} thought on ${thought.createdAt}:</h5>
+      <p>${thought.thoughtText}</p>
       <div class="bg-dark ml-3 p-2 rounded" >
         ${thought.reactions && thought.reactions.length
       ? `<h5>${thought.reactions.length} ${thought.reactions.length === 1 ? 'Reaction' : 'Reactions'
@@ -95,7 +95,7 @@ function printthought(thought) {
 function printReaction(reaction) {
   return `
   <div class="card p-2 rounded bg-secondary">
-    <p>${reaction.writtenBy} reaction on ${reaction.createdAt}:</p>
+    <p>${reaction.username} reaction on ${reaction.createdAt}:</p>
     <p>${reaction.reactionBody}</p>
   </div>
 `;
@@ -104,14 +104,14 @@ function printReaction(reaction) {
 function handleNewThoughtSubmit(event) {
   event.preventDefault();
 
-  const thoughtBody = $newthoughtForm.querySelector('#thought').value;
-  const writtenBy = $newthoughtForm.querySelector('#written-by').value;
+  const thoughtText = $newthoughtForm.querySelector('#thought').value;
+  const username = $newthoughtForm.querySelector('#written-by').value;
 
-  if (!thoughtBody || !writtenBy) {
+  if (!thoughtText || !username) {
     return false;
   }
 
-  const formData = { thoughtBody, writtenBy };
+  const formData = { thoughtText, username };
 
   fetch(`/api/thoughts/${userId}`, {
     method: 'POST',
@@ -127,9 +127,9 @@ function handleNewThoughtSubmit(event) {
       }
       response.json();
     })
-    .then(commentResponse => {
-      console.log(commentResponse);
-      // location.reload();
+    .then(thoughtResponse => {
+      console.log(thoughtResponse);
+      location.reload();
     })
     .catch(err => {
       console.log(err);
@@ -139,22 +139,21 @@ function handleNewThoughtSubmit(event) {
 function handleNewReactionSubmit(event) {
   event.preventDefault();
 
-  if (!event.target.matches('#thought-reaction')) {
+  if (!event.target.matches('#thought')) {
     return false;
   }
 
   const thoughtId = event.target.getAttribute('data-thoughtid');
 
-  const writtenBy = event.target.querySelector('[name=reaction-name]').value;
+  const username = event.target.querySelector('[name=reaction-name]').value;
   const reactionBody = event.target.querySelector('[name=reaction]').value;
 
-  if (!reactionBody || !writtenBy) {
+  if (!reactionBody || !username) {
     return false;
   }
-
-  const formData = { writtenBy, reactionBody };
-
-  fetch(`/api/thoughts/${userId}/${thoughtId}`, {
+  //.route('/:thoughtId/reactions')
+  const formData = { username, reactionBody };
+  fetch(`/api/thoughts/${userId}/${thoughtId}/`, {
     method: 'PUT',
     headers: {
       Accept: 'application/json',
@@ -168,8 +167,8 @@ function handleNewReactionSubmit(event) {
       }
       response.json();
     })
-    .then(commentResponse => {
-      console.log(commentResponse);
+    .then(thoughtResponse => {
+      console.log(thoughtResponse);
       location.reload();
     })
     .catch(err => {

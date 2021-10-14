@@ -2,51 +2,59 @@
 
 ## Description
 
-*Social Network*
+*An API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This application uses Express, Node, MongoDB and Mongoose to allow users, thoughts, friend lists and thought reactions to be created, updated and deleted.*
 
 
 ## Table of Contents
 
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
-- [App Screenshots](#app-screenshots)
-- [Overview Links](#overview-links)
+- [GIF Files](#gif-files)
+- [Walkthrough VDO](#walkthrough-video)
+- [Github Repository](#github-repository)
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Technologies](#technologies)
 - [Questions](#questions)
+- [Copyright](#copyright)
 
 
-## App Screenshots
-- Picture of the Home Page of the Application.
-![Home page of the application](./public/images/application-output/Homepage-display.png)
+## GIF Files
 
-- Picture of the Dashboard
-![Picture of dashboard](./public/images/application-output/Dashboard-display.JPG)
+- GIF for GET all Users and Thoughts.
 
-- To login to Application
+![GIF for GET all Users and Thoughts](./public/assets/gif-files/Get-all-users-and-all-thoughts.gif)
 
-![Login functionality](./public/images/application-output/Login-page.png)
+- GIF for GET Single User and Thought.
 
-- Signup Option of the Application.
-![Signup option](./public/images/application-output/Signup-page.png)
+![GIF for GET Single User and Thought](./public/assets/gif-files/Get-single-users-and-single-thoughts.gif)
 
-- To Find Our Locations
-![Edit Post](./public/images/application-output/Location-page.JPG)
+- GIF for Create, Update and Delete Users
 
-- View with Insomnia
+![GIF for Create, Update and Delete Users](./public/assets/gif-files/Create-update-delete-user.gif)
 
-![In API](./public/images/application-output/Insomnia-API-View.png)
+- GIF for Add, Update and Delete Thoughts
+
+![GIF for Add, Update and Delete Thoughts](./public/assets/gif-files/Add-update-delete-thoughts.gif)
+
+- GIF for Add and Delete Friends for Users
+
+![GIF for Add and Delete Friends for Users](./public/assets/gif-files/Add-and-delete-friend.gif)
+
+- GIF for Add and Delete Reactions to Thoughts
+
+![GIF for Add and Delete Reactions to Thoughts](./public/assets/gif-files/add-remove-reaction-to-thought.gif)
 
 
-## Overview Links
 
-- [Application launched in Heroku](https://music-world-e-commerce.herokuapp.com/products)
-- [Application walkthrough](https://watch.screencastify.com/v/9sRcfDbkBQJnXRCZYhMR)
-- [GitHub Repository](https://mirzadev.github.io/music-world-ecommerce/)
+## Walkthrough Video
 
+- [Application walkthrough](https://www.youtube.com/watch?v=_NECpuCkLro)
+
+## Github Repository
+- [GitHub Repository](https://mirzadev.github.io/Social-Network-Api/)
 
 ## User Story
 ```text
@@ -71,32 +79,29 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Installation
 💾     
-- npm install express-handlebars
-- npm install express
-- npm install
-- npm install --save mysql2
-- npm install sequelize
-- npm install dotenv
+- Clone github repository
+- npm init
+- npm install mongoose
+- npm install Express
 - npm install bcrypt
-- npm install express-session
-- npm install connect-session-sequelize
 - npm install -g nodemon
-
 
 ## Usage
 💻   
   
 Run the following command at the terminal:
 
-`npm run seeds`
-  
 `npm start`
 
-
-
+## Technologies 
+* JavaScript
+* Node.js
+* MongoDB
+* Mongoose
+* Express.js
 
 ## Questions
-✉️ Contact me with any questions: [email](mailto:awal.mirza2016@gmail.com) , [LinkedIn](https://www.linkedin.com/in/mirza-awal-5972511b5/)<br />
+✉️ Contact me with any questions: [email](mailto:awal.mirza2016@gmail.com) , [LinkedIn](https://www.linkedin.com/in/mirza-awal-5972511b5/)>
 
 ## Copyright
 *This application is copyright protected and only owners is 
