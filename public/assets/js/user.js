@@ -76,15 +76,15 @@ function printthought(thought) {
       </div>
       <form class="reply-form mt-3" data-thoughtid='${thought._id}'>
         <div class="mb-3">
-          <label for="reply-name">Leave Your Name</label>
-          <input class="form-input" name="reply-name" required />
+          <label for="reaction-name">Leave Your Name</label>
+          <input class="form-input" name="reaction-name" required />
         </div>
         <div class="mb-3">
           <label for="reaction">Leave a Reaction</label>
           <textarea class="form-textarea form-input"  name="reaction" required></textarea>
         </div>
 
-        <button class="mt-2 btn display-block w-100">Add Reaction</button>
+        <button class="mt-2 btn display-block w-100" id="reaction">Add Reaction</button>
       </form>
   `;
 
@@ -139,22 +139,18 @@ function handleNewThoughtSubmit(event) {
 function handleNewReactionSubmit(event) {
   event.preventDefault();
 
-  if (!event.target.matches('#thought')) {
-    return false;
-  }
-
   const thoughtId = event.target.getAttribute('data-thoughtid');
 
-  const username = event.target.querySelector('[name=reaction-name]').value;
-  const reactionBody = event.target.querySelector('[name=reaction]').value;
+  const username = event.target.querySelector('input[name=reaction-name]').value;
+  const reactionBody = event.target.querySelector('textarea[name=reaction]').value;
 
   if (!reactionBody || !username) {
     return false;
   }
   //.route('/:thoughtId/reactions')
   const formData = { username, reactionBody };
-  fetch(`/api/thoughts/${userId}/${thoughtId}/`, {
-    method: 'PUT',
+  fetch(`/api/thoughts/${thoughtId}/reactions`, {
+    method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'

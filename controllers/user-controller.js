@@ -63,7 +63,7 @@ const userController = {
                   .catch(err => res.status(400).json(err));
       },
 
-      // delete user
+      // delete user by id and remove associate thoughts
       deleteUser({ params }, res) {
             User.findOneAndDelete({ _id: params.id })
                   .then(dbUserData => {
@@ -71,7 +71,7 @@ const userController = {
                               return res.status(404).json({ message: 'No user found with this id!' });
                         }
 
-                        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } })
+                        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } }) // this code will delete users with associated thoughts
                   })
                   .then(() => {
                         res.json({ message: 'user has been deleted.' });
@@ -106,42 +106,6 @@ const userController = {
                   .catch(err => res.status(400).json(err));
       },
 
-      // delete user by id and remove associate thoughts
-
-      // deleteUser({ params }, res) {
-      //       User.findByIdAndDelete({ _id: params.id })
-      //             .then(async (dbUserData) => {
-      //                   const { username } = dbUserData;
-      //                   if (!dbUserData) {
-      //                         return res.status(404).json({ message: 'No user found with this id!' });
-      //                   }
-      //                   await Thought.deleteMany({ writtenBy: username });
-      //                   res.json(dbUserData);
-      //             })
-      //             .then(() => {
-      //                   res.json({ message: 'user with associate thoughts has been deleted.' });
-      //             })
-      //             .catch((err) = res.json(err));
-      // },
-      // deleteUser({ params }, res) {
-      //       User.findById(req.params.user_id, function (err, user) {
-
-      //             if (err)
-      //                   return next(new restify.InternalError(err));
-      //             else if (!user)
-      //                   return next(new restify.ResourceNotFoundError('The resource you requested could not be found.'));
-
-      //             // find and remove all associated sweepstakes
-      //             Thought.find({ user_id: user._id }).remove();
-
-      //             // find and remove all submissions
-      //             //Reaction.find({ user_id: user._id }).remove();
-
-      //             user.remove();
-
-      //             res.send({ id: req.params.user_id });
-      //       });
-      // }
 }
 
 
