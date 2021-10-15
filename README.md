@@ -54,7 +54,7 @@
 
 ## Walkthrough Video
 
-- [Application walkthrough Insomnia](https://www.youtube.com/watch?v=_NECpuCkLro)
+- [Application walkthrough Insomnia](https://www.youtube.com/watch?v=gDaMHFvF6Xs)
 
 - [Front End Application Walkthrough](https://watch.screencastify.com/v/NooD095Eh21cms12nMIt)
 
