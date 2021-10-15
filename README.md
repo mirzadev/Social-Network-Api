@@ -47,11 +47,16 @@
 
 ![GIF for Add and Delete Reactions to Thoughts](./public/assets/gif-files/add-remove-reaction-to-thought.gif)
 
+- GIF for Delete an User With Associated Thoughts/Reactions
+
+![GIF for Delete User With Associated Thoughts](./public/assets/gif-files/delete-user-delets-associated-thoughts.gif)
 
 
 ## Walkthrough Video
 
-- [Application walkthrough](https://www.youtube.com/watch?v=_NECpuCkLro)
+- [Application walkthrough Insomnia](https://www.youtube.com/watch?v=_NECpuCkLro)
+
+- [Front End Application Walkthrough](https://watch.screencastify.com/v/NooD095Eh21cms12nMIt)
 
 ## Github Repository
 - [GitHub Repository](https://mirzadev.github.io/Social-Network-Api/)
